@@ -1,0 +1,44 @@
+{
+	"name": "OutputsSQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutPutDBTable",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"outputTable": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "country_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country_year",
+				"type": "varchar"
+			},
+			{
+				"name": "co2_per_capita",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 5
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().outputTable",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

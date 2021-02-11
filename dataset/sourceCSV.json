@@ -1,0 +1,24 @@
+{
+	"name": "sourceCSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CopyBlobSource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "pub_XqH4PGu.csv",
+				"container": "copy-source"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

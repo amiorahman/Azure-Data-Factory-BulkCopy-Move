@@ -1,0 +1,24 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copy-csv",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/copy-source/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/c75e23f1-df2f-49ca-bf61-df9583677ed9/resourceGroups/ADF_RG/providers/Microsoft.Storage/storageAccounts/amiorahman",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
